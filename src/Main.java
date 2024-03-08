@@ -26,11 +26,16 @@ public class Main {
         cuenta1.titularCuenta="Agustin Romero";
         cuenta1.saldoCuenta = 1000000;
 
+        //Llenando la clase de datos
+        cuenta2.numeroCuenta = 123457;
+        cuenta2.titularCuenta="Victor Paillacar";
+        cuenta2.saldoCuenta = 300000;
+
+
+
         cuenta1.mostrarInformacionCuentaCoriente();
 
-        cuenta2.numeroCuenta = 123456;
-        cuenta2.titularCuenta="Agustin Romero";
-        cuenta2.saldoCuenta = 1000000;
+
 
         cuenta2.mostrarInformacionCuentaCoriente();
     }
