@@ -1,6 +1,7 @@
 package cl.billeteraVirtualBootcamp.clases;
 
 import java.text.DecimalFormat;
+import java.util.Scanner;
 
 public class Cuenta {
     /*
@@ -17,17 +18,36 @@ public, private, protected y son palabras reservadas
     /*
     2)Constructor
      */
-public Cuenta(){
+    public Cuenta() {
 
-}
-public Cuenta(int numCuenta, String titular, double saldo){
-    this.numeroCuenta= numCuenta;
-    this.titularCuenta= titular;
-    this.saldoCuenta=saldo;
-}
+    }
+
+    public Cuenta(int numCuenta, String titular, double saldo) {
+        this.numeroCuenta = numCuenta;
+        this.titularCuenta = titular;
+        this.saldoCuenta = saldo;
+    }
+
+    public Cuenta(int numeroCuenta, double saldoCuenta) {
+    }
+
     /*
     3)Metodos de acceso
      */
+
+    public static Cuenta CrearCuentaCorrientePorConsola() {
+        Scanner scanner = new Scanner(System.in);
+        int numeroCuenta;
+        double saldoCuenta;
+
+        System.out.println("Ingrese el numero de cuenta: ");
+        numeroCuenta = scanner.nextInt();
+        scanner.nextLine();
+
+        System.out.println("Ingrese el saldo de cuenta: ");
+        saldoCuenta = scanner.nextDouble();
+        return new Cuenta (numeroCuenta, saldoCuenta);
+    }
 
     public int getNumeroCuenta() {
         return numeroCuenta;
@@ -48,23 +68,22 @@ public Cuenta(int numCuenta, String titular, double saldo){
     public double getSaldoCuenta() {
         return saldoCuenta;
     }
-
-    public void setSaldoCuenta(double saldoCuenta) {
-        this.saldoCuenta = saldoCuenta;
-    }
 /*
     4)Metodos de comportamiento
      */
 
-    public void mostrarInformacionCuentaCoriente() {
-        String formatoSaldo = formatearSaldo(saldoCuenta);
+    public void setSaldoCuenta(double saldoCuenta) {
+        this.saldoCuenta = saldoCuenta;
+    }
 
+    public void mostrarInformacionCuentaCoriente() {
+
+        String formatoSaldo = formatearSaldo(saldoCuenta);
         System.out.println("Numero de cuenta: " + numeroCuenta);
         System.out.println("Titular: " + titularCuenta);
         System.out.println("Saldo de cuenta: $" + saldoCuenta);
 
     }
-
 
     /*
     5)Metodos utilitarios o de logica
